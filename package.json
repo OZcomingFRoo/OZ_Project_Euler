@@ -1,0 +1,19 @@
+{
+  "name": "oz_project_euler",
+  "version": "1.0.0",
+  "description": "Archive of tasks that tackle problems from website \"projecteuler.net\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OZcomingFRoo/OZ_Project_Euler.git"
+  },
+  "author": "Omri Zeevi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OZcomingFRoo/OZ_Project_Euler/issues"
+  },
+  "homepage": "https://github.com/OZcomingFRoo/OZ_Project_Euler#readme"
+}
