@@ -9,4 +9,5 @@
     1) task.txt => has the description of task with the link to it.
     2) [task_file].js => The solution code
     3) [task_file].test.js => Includes test cases for the solution to handle
- - All tasks can be run by Jest command.
+ - To test all tasks run "npm test".
+ - To test a specific test file, run  "npm test -- [task_file].test.js".
