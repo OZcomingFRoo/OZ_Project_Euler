@@ -2,6 +2,7 @@
 const panDigitalNumberUtilities = (() => {
   const ALL_DIGITS_STRING = "0123456789";
   const PAN_DIGITAL_MIN_VALUE = 1023456789;
+  const PAN_DIGITAL_MAX_VALUE = 9876543210;
   const getDigitLength = number => {
     return isNaN(number) ? -1 : number.toString().length;
   };
@@ -19,6 +20,7 @@ const panDigitalNumberUtilities = (() => {
   const apiClient = {
     isPanDigitalNumber: isPanDigitalNumber,
     PAN_DIGITAL_MIN_VALUE: PAN_DIGITAL_MIN_VALUE,
+    PAN_DIGITAL_MAX_VALUE: PAN_DIGITAL_MAX_VALUE
   };
   return apiClient;
 })();

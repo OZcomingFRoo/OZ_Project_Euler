@@ -46,6 +46,7 @@ const {
     expect(panDigitalNumberUtilities.isPanDigitalNumber(value)).toBeFalsy();
   });
 }
+
 // ------- Main tests ------- //
 {
   test("Main test part 1 : value 1,406,357,289 is a Pandigital number with the special property", () => {
@@ -59,16 +60,32 @@ const {
     let boolResult = isValuePandigitalNumberWithSpecialProperty(value);
     expect(boolResult).toBeFalsy();
   });
+  // DO NOT RUN THIS TEST, it's written way to naive and takes to long to finish!
+  // test("Main test part 3 : Sum of all pandigital numbers that have the special property", async () => {
+  //   async function wrapLongProcess(dropTestCallBack){
+  //     let sum = 0;
+  //     const minPanDigitalVal = panDigitalNumberUtilities.PAN_DIGITAL_MIN_VALUE;
+  //     const maxPanDigitalVal = panDigitalNumberUtilities.PAN_DIGITAL_MAX_VALUE;
+  //     setTimeout(()=> { throw new Error(); },1000);
+  //     for (let numValue = minPanDigitalVal + 1; numValue < maxPanDigitalVal; numValue++) {
+  //         // Lets just iterate
+  //          if(isValuePandigitalNumberWithSpecialProperty(numValue)){
+  //            sum += numValue;
+  //          }
+  //     }
+  //     return sum;
+  //   }
+  //   const result = await wrapLongProcess();
+  //   console.log("FINALLY ::::::::::::::::: ", result);
+  //   expect(result).toBeGreaterThan(0);
+  // });
 }
 
 function isValuePandigitalNumberWithSpecialProperty(value) {
   // 1st check that the number is a pandigital Number
   if (panDigitalNumberUtilities.isPanDigitalNumber(value)) {
     const primeNumbers = new PrimeNumbers();
-    const digits = value
-      .toString()
-      .substr(1)
-      .match(/[0-9]/g);
+    const digits = value.toString().substr(1).match(/[0-9]/g);
     for (let index = 0; index + 2 < digits.length; index++) {
       let stringNum = digits[index] + digits[index + 1] + digits[index + 2];
       const num = parseInt(stringNum);
