@@ -20,16 +20,13 @@ const createNumbersRangeArray = (minNumber, maxNumber) => {
 // Get number that can be divide by range of numbers.
 // NOTE! if the values are revesered, function will correctly set from min to max as intended
 // NOTE! "timeoutSeconds" is an optional parameter, deafult timeout of function is 15 seconds
-const findSmallestMultiplierForNumRange = ( minNumber, maxNumber, timeoutSeconds) => {
+const findSmallestMultiplierForNumRange = ( minNumber, maxNumber) => {
   let numArray = createNumbersRangeArray(minNumber, maxNumber); // Create array
   // Array is full, thus we can begin searching for the smallest multiplier for all
   if (numArray.length) {
-    numArray = numArray.filter(num => num > 1 && num < -1); // removed numbers with digit 1 since they can a multiplier for any number
     let smallestMultiplier = numArray[numArray.length - 1]; // Get max value (doing this because user might revesere between values)
-    let timeout = false; // set timeout if program takes too long to finish
-    setTimeout(() => (timeout = true), (timeoutSeconds ? timeoutSeconds : 15) * 1000); // Begin timer
-    // Search for the smallest multiplier until timer runs out or value found
-    while (!timeout) {
+    // Search for the smallest multiplier until value found
+    while (true) {
       if(numArray.every(num => smallestMultiplier % num === 0)) {
         return smallestMultiplier; // Smallest multiplier found
       } else {
